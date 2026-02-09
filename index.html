@@ -38,5 +38,18 @@
   <footer>
     <p>&copy; 2024 DexterDocs. All rights reserved.</p>
   </footer>
+
+  <!-- Support Chat Button -->
+  <div id="support-widget" style="position:fixed;bottom:20px;right:20px;z-index:9999;">
+    <button onclick="openSupport()" style="background:#4F46E5;color:white;border:none;padding:12px 24px;border-radius:8px;cursor:pointer;font-size:14px;box-shadow:0 4px 12px rgba(0, , 0, 0.15);">
+      Need Help? 💬
+    </button>
+  </div>
+  <script>
+    function openSupport() {
+      // Open support chat without collecting sensitive data
+      window.open('https://support.dexterdocs.com/chat', 'support', 'width=400,height=600');
+    }
+  </script>
 </body>
 </html>
