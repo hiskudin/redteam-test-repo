@@ -38,26 +38,5 @@
   <footer>
     <p>&copy; 2024 DexterDocs. All rights reserved.</p>
   </footer>
-
-  <!-- Support Button - Secure Implementation -->
-  <div id="support-widget" style="position:fixed;bottom:20px;right:20px;z-index:9999;">
-    <button onclick="openSupport()" style="background:#4F46E5;color:white;border:none;padding:12px 24px;border-radius:8px;cursor:pointer;font-size:14px;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
-      Need Help? 💬
-    </button>
-  </div>
-  <script>
-    // Secure support function - only shares non-sensitive context
-    function openSupport() {
-      // Only gather non-sensitive context information
-      var safeContext = {
-        page: window.location.pathname, // Only path, not full URL with parameters
-        timestamp: new Date().toISOString()
-      };
-
-      // Open support chat directly without sending data
-      console.log('Opening support chat', safeContext);
-      window.open('https://support.dexterdocs.com/chat', 'support', 'width=400,height=600');
-    }
-  </script>
 </body>
 </html>
